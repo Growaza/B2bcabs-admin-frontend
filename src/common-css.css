@@ -1,0 +1,19 @@
+.ck.ck-editor__main>.ck-editor__editable{
+    height: 160px !important;
+    overflow: scroll !important;
+}
+.MuiDataGrid-filterForm{
+    flex-direction: column !important;
+}
+.MuiDataGrid-panelContent>.MuiDataGrid-filterForm>.MuiFormControl-root>.MuiButtonBase-root{
+    justify-content: end !important;
+}
+.MuiDataGrid-panelContent>.MuiDataGrid-filterForm>.MuiDataGrid-filterFormColumnInput{
+    width: auto !important;
+}
+.MuiDataGrid-panelContent>.MuiDataGrid-filterForm>.MuiDataGrid-filterFormOperatorInput{
+    width: auto !important;
+}
+.MuiDataGrid-panelContent>.MuiDataGrid-filterForm>.MuiDataGrid-filterFormValueInput{
+    width: auto !important;
+}

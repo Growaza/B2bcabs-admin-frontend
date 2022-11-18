@@ -274,7 +274,7 @@ function EditBookingCancel(props) {
                   </MDBox> */}
                   <MDBox mb={2}>
                     <MDButton onClick={() => updateBooking()} color="warning">
-                      Update Booking
+                      Update Cancel Booking
                     </MDButton>
                   </MDBox>
                 </MDBox>

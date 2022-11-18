@@ -45,6 +45,7 @@ import EditBookingConfirm from "layouts/BookingConfirm/editBookingConfirm";
 import EditBookingCancel from "layouts/BookingCancel/editBookingCancel";
 import EditTestimonials from "layouts/manageTestimonials/editTestimonials";
 import EditManageContact from "layouts/manageContact/editManageContact";
+import EditFeedback from "layouts/feedback/editFeedback";
 import EditUser from "layouts/users/editUser";
 import EditSubscribers from "layouts/manageSubscribers/editSubscribers";
 
@@ -62,6 +63,7 @@ import { useMaterialUIController, setMiniSidenav, setOpenConfigurator } from "co
 // Images
 import brandWhite from "assets/images/logo-ct.png";
 import brandDark from "assets/images/logo-ct-dark.png";
+import EditFaq from "layouts/faq/editFaq";
 
 export default function App() {
   const [controller, dispatch] = useMaterialUIController();
@@ -205,6 +207,18 @@ export default function App() {
             path="/manage-subscribers/:id/"
             element={<ProtectedRoute props={<EditSubscribers />}></ProtectedRoute>}
           ></Route>
+          <Route
+            path="/feedback/:id/"
+            element={<ProtectedRoute props={<EditFeedback />}></ProtectedRoute>}
+          ></Route>
+          <Route
+          path="/faq/:id/"
+          element={<ProtectedRoute props={<EditFaq />}></ProtectedRoute>}
+        ></Route>
+          <Route
+          path="/faq/add/"
+          element={<ProtectedRoute props={<EditFaq />}></ProtectedRoute>}
+        ></Route>
           <Route path="*" element={<Navigate to="/dashboard" />} />
         </Routes>
       </ThemeProvider>
@@ -255,6 +269,18 @@ export default function App() {
         <Route
           path="/manage-subscribers/:id/"
           element={<ProtectedRoute props={<EditSubscribers />}></ProtectedRoute>}
+        ></Route>
+        <Route
+          path="/feedback/:id/"
+          element={<ProtectedRoute props={<EditFeedback />}></ProtectedRoute>}
+        ></Route>
+        <Route
+          path="/faq/:id/"
+          element={<ProtectedRoute props={<EditFaq />}></ProtectedRoute>}
+        ></Route>
+        <Route
+          path="/faq/add/"
+          element={<ProtectedRoute props={<EditFaq />}></ProtectedRoute>}
         ></Route>
         {getRoutes(routes)}
         <Route path="*" element={<Navigate to="/dashboard" />} />

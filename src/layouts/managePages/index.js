@@ -206,7 +206,6 @@ function ManagePages() {
                           <MenuItem value={"terms_and_condition"}>terms and condition</MenuItem>
                           <MenuItem value={"privacy_and_policy"}>privacy and policy</MenuItem>
                           <MenuItem value={"aboutus"}>aboutus</MenuItem>
-                          <MenuItem value={"FAQs"}>FAQs</MenuItem>
                         </Select>
                       </FormControl>
                     </MDBox>
@@ -220,7 +219,7 @@ function ManagePages() {
                         onInit={(editor) => {}}
                         onChange={handleMessageChange}
                         config={{ maxHeight: 200}}
-                        style={{height: "20"}}
+                        style={{height: "200px", overflow: "scroll"}}
                         // value={pageDetail}
                       ></CKEditor>
                     </MDBox>

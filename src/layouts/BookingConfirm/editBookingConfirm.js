@@ -166,7 +166,7 @@ function EditBookingConfirm(props) {
                   </MDBox>
 
                   <MDBox mb={2}>
-                    <InputLabel id="demo-simple-select-label">Is Booking Cansel</InputLabel>
+                    <InputLabel id="demo-simple-select-label" sx={{marginBottom: 1}}>Is Booking Cansel</InputLabel>
                     <FormControl fullWidth>
                       <Select
                         displayEmpty
@@ -189,7 +189,7 @@ function EditBookingConfirm(props) {
                   </MDBox>
 
                   <MDBox mb={2}>
-                    <InputLabel id="demo-simple-select-label">Is Pickup</InputLabel>
+                    <InputLabel id="demo-simple-select-label" sx={{marginBottom: 1}}>Is Pickup</InputLabel>
                     <FormControl fullWidth>
                       <Select
                         displayEmpty
@@ -272,7 +272,7 @@ function EditBookingConfirm(props) {
                   </MDBox> */}
                   <MDBox mb={2}>
                     <MDButton onClick={() => updateBooking()} color="warning">
-                      Update Booking
+                      Update Confirm Booking
                     </MDButton>
                   </MDBox>
                 </MDBox>

@@ -217,44 +217,11 @@ function Dashboard() {
       <DashboardNavbar />
       <MDBox pt={1} pb={3}>
         <Grid container spacing={6}>
-          <Grid item xs={12}>
-            {/* <Card> */}
-            {/* <MDBox
-                mx={2}
-                mt={-3}
-                py={3}
-                px={2}
-                variant="gradient"
-                bgColor="info"
-                borderRadius="lg"
-                coloredShadow="info"
-              >
-                <MDTypography variant="h6" color="white">
-                  Registered User
-                </MDTypography>
-              </MDBox>
-              <MDBox pt={3}>
-              
-                <Box sx={{ height: "500px", width: "100%" }}>
-                  <DataGrid
-                    rows={rowsData}
-                    columns={columnsData}
-                    pageSize={5}
-                    rowsPerPageOptions={[5]}
-                    checkboxSelection
-                    disableSelectionOnClick
-                    experimentalFeatures={{ newEditingApi: true }}
-                  />
-                </Box>
-              </MDBox> */}
-
-            {/* </Card> */}
-          </Grid>
           {data &&
             Object.keys(data).map(function (key,i) {
               return (
                 <>
-                  <Grid item xs={3} key={i}>
+                  <Grid item xs={12} sm={6} md={3} key={i}>
                     <Box sx={{pl: 2, py: 3, backgroundColor: colorData[i], color: "#fff", borderRadius: "20px"}}>
                       <Typography variant="h6" sx={{color: "#fff"}}> {_toCamel(key)} </Typography>
                       <Typography variant="h3" sx={{color: "#fff", mt: 2}}>

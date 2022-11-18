@@ -57,7 +57,8 @@ import SignIn from "layouts/authentication/sign-in";
 
 // @mui icons
 import Icon from "@mui/material/Icon";
-import Feedback from "layouts/billing";
+import Feedback from "layouts/feedback";
+import FAQ from "layouts/faq";
 import Reports from "layouts/notifications";
 import AboutUs from "layouts/profile";
 import { ProtectedRoute } from "components/ProtectedRoute";
@@ -153,6 +154,22 @@ const routes = [
     icon: <Icon fontSize="small">emoji_people</Icon>,
     route: "/driver-request",
     component: <ProtectedRoute props={<DriverRequest />}></ProtectedRoute>,
+  },
+  {
+    type: "collapse",
+    name: "Feedback",
+    key: "feedback",
+    icon: <Icon fontSize="small">feedback</Icon>,
+    route: "/feedback",
+    component: <ProtectedRoute props={<Feedback />}></ProtectedRoute>,
+  },
+  {
+    type: "collapse",
+    name: "FAQs",
+    key: "faq",
+    icon: <Icon fontSize="small">question_mark</Icon>,
+    route: "/faq",
+    component: <ProtectedRoute props={<FAQ />}></ProtectedRoute>,
   },
   {
     type: "collapse",

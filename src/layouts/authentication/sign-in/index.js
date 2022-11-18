@@ -44,6 +44,7 @@ import sidenavLogoLabel from "examples/Sidenav/styles/sidenav";
 // Images
 import bgImage from "assets/images/bg-sign-in-basic.jpeg";
 import myApi from "../../../axios";
+import { Box, CircularProgress } from "@mui/material";
 
 function Basic() {
   let navigate = useNavigate();
@@ -51,12 +52,15 @@ function Basic() {
   const [email,setEmail] = useState()
   const [password,setPassword] = useState()
   const [errorMsg,setErrorMsg] = useState()
+  const [loading,setLoading] = useState(false);
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
   const onSubmit = async() => {
+    setLoading(true);
     const reponse = await myApi.post('/api/v1/accounts/login-verify/',{email:email,password:password})
     console.log(reponse.data.valid,'NS')
     if(reponse?.data.valid != false){
+      setLoading(false);
       if(reponse?.data.is_admin == true){
         localStorage.setItem('user',JSON.stringify(reponse?.data))
         setErrorMsg("")
@@ -67,6 +71,7 @@ function Basic() {
       }
     }
     else{
+      setLoading(false);
       setErrorMsg(reponse?.data.response)
     }
   }
@@ -137,9 +142,17 @@ function Basic() {
               </MDTypography>
             </MDBox> */}
             <MDBox mt={4} mb={1}>
-              <MDButton variant="gradient" color="warning" fullWidth onClick={onSubmit}>
-                sign in
-              </MDButton>
+              {
+                loading ? (
+                  <Box sx={{width: "100%", display: "flex", justifyContent: "center"}}>
+                    <CircularProgress color={"secondary"} size={20}/>
+                  </Box>
+                ) : (
+                  <MDButton variant="gradient" color="warning" fullWidth onClick={onSubmit}>
+                    sign in
+                  </MDButton>
+                )
+              }
             </MDBox>
             <MDBox mt={3} mb={1} textAlign="center">
               <MDTypography variant="button" color="text" sx={{color:'red !important'}}>
