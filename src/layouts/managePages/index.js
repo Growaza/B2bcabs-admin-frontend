@@ -98,7 +98,7 @@ function ManagePages() {
   // const [data, setData] = useState([]);
   const [email, setEmail] = useState("");
   const [page, setPage] = useState("");
-  const [pageDetail, setPageDetail] = useState();
+  const [pageDetail, setPageDetail] = useState("");
 
   const [notify, setNotify] = useState({
     isOpen: false,
@@ -117,15 +117,22 @@ function ManagePages() {
     },
   };
 
-  //   React.useEffect(async() => {
-  //     const data =  await myApi.get("/api/v1/accounts/vendors/")
-  //     console.log(data?.data, "data");
-  //     setData(data.data);
-  //   }, []);
+  React.useEffect(() => {
+    getData(page)
+  }, [page]);
+
+  const getData = async (page) => {
+    if (page) {
+      const data =  await myApi.get(`/api/v1/manage_pages/pages/?variable=${page}`)
+      setPageDetail(data?.data[0].value)
+    } else {
+      setPageDetail("")
+    }
+    // setData(data.data);
+  }
 
   const handleMessageChange = (event, editor) => {
     const data = editor.getData();
-    // console.log(data)
     setPageDetail(data);
   };
 
@@ -220,7 +227,8 @@ function ManagePages() {
                         onChange={handleMessageChange}
                         config={{ maxHeight: 200}}
                         style={{height: "200px", overflow: "scroll"}}
-                        // value={pageDetail}
+                        value={pageDetail}
+                        data={pageDetail}
                       ></CKEditor>
                     </MDBox>
 

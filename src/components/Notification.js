@@ -23,13 +23,11 @@ function Notification(props) {
     }
     return (
         <Snackbar
-        // className={classes.root}
-        open={notify.isOpen}
-        autoHideDuration={3000}
-        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-        onClose={handleClose}
-        >
-            <Alert severity={notify.type}  variant="filled" onClose={handleClose}>
+            open={notify.isOpen}
+            autoHideDuration={3000}
+            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+            onClose={handleClose}>
+            <Alert severity={notify.type}  variant="filled" sx={{color: "#fff"}} onClose={handleClose}>
                 {notify.message}
             </Alert>
         </Snackbar>
