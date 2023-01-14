@@ -215,10 +215,10 @@ export default function App() {
           path="/faq/:id/"
           element={<ProtectedRoute props={<EditFaq />}></ProtectedRoute>}
         ></Route>
-          <Route
-          path="/faq/add/"
+          {/* <Route
+          path="/faq/add"
           element={<ProtectedRoute props={<EditFaq />}></ProtectedRoute>}
-        ></Route>
+        ></Route> */}
           <Route path="*" element={<Navigate to="/dashboard" />} />
         </Routes>
       </ThemeProvider>
@@ -278,10 +278,10 @@ export default function App() {
           path="/faq/:id/"
           element={<ProtectedRoute props={<EditFaq />}></ProtectedRoute>}
         ></Route>
-        <Route
-          path="/faq/add/"
+        {/* <Route
+          path="/faq/add"
           element={<ProtectedRoute props={<EditFaq />}></ProtectedRoute>}
-        ></Route>
+        ></Route> */}
         {getRoutes(routes)}
         <Route path="*" element={<Navigate to="/dashboard" />} />
       </Routes>

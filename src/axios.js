@@ -28,7 +28,8 @@ let user_detail = user_data();
 const myApi = axios.create({
   // baseURL: process.env.NEXT_PUBLIC_API || "http://",
   // baseURL: process.env.NEXT_PUBLIC_API || "http://127.0.0.1:8000",
-  baseURL: "https://b2bcabsapi.herokuapp.com",
+  // baseURL: "https://b2bcabsapi.herokuapp.com",
+  baseURL: "https://b2bbackend-production.up.railway.app/",
   headers: {
     Authorization: `Token ${user_detail?.token}`,
     // org: user_detail?.org_id ? user_detail?.org_id : 0,

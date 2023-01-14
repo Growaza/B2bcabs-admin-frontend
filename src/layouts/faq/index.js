@@ -99,7 +99,7 @@ function FAQ() {
 
   const addCheck = async () => {
     try {
-      return navigate(`/faq/add/`);
+      return navigate(`/faq/add`);
     } catch (error) {}
   };
 
